@@ -1,10 +1,9 @@
 class Animal {
     constructor(name) {
         this._name = name;
-        this._hunger = 0;
-        this._thirst = 0;
+        this._hunger = 100;
+        this._thirst = 100;
         this._happyMeter = 0;
-        this._timePlayed = 0;
     }
     get name() {
         return this._name;
@@ -21,10 +20,21 @@ class Animal {
     get timeplayed() {
         return this._timePlayed
     }
-
-    increaseHappyMeter(){
-        this._timePlayed++;
-        this._happyMeter += 10
+    hunger(){
+        this.hunger--;
+    }   
+    thirst(){
+        this._thirst--
     }
-    
 }
+class Dog extends Animal {
+    constructor(name, lovesBones){
+        super(name);
+        this._lovesBones = lovesBones
+    }
+    get lovesBones(){
+        return this._lovesBones;
+    }
+}
+
+const bruno = new Dog ("bruno", true)
