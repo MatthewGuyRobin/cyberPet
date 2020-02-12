@@ -17,16 +17,18 @@ class Animal {
     get happymeter() {
         return this._happyMeter;
     }
-    get timeplayed() {
-        return this._timePlayed
+ 
+    eat(){
+        this._hunger--;
+    } 
+    drink(){
+        this._thirst--;
     }
-    hunger(){
-        this.hunger--;
-    }   
-    thirst(){
-        this._thirst--
+    increaseHappy(){
+        this._happyMeter++;
     }
 }
+
 class Dog extends Animal {
     constructor(name, lovesBones){
         super(name);
@@ -37,4 +39,20 @@ class Dog extends Animal {
     }
 }
 
-const bruno = new Dog ("bruno", true)
+const ralph = new Dog ("Ralph", true)
+
+const eatdrink = () => {
+    ralph.eat();
+    ralph.drink();
+}
+
+const playgame = () => {
+    ralph.increaseHappy();
+}
+
+eatdrink()
+console.log(ralph)
+playgame()
+console.log(ralph)
+
+
